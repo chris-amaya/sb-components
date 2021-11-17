@@ -1,0 +1,19 @@
+version: "3"
+services:
+  react-app:
+    image: getting-started:v2
+    stdin_open: true
+    ports:
+      - "6006:6006"
+    networks:
+      - mern-app
+    volumes:
+      - my-data:/data
+
+networks:
+  mern-app:
+    driver: bridge
+
+volumes:
+  my-data:
+    driver: local
